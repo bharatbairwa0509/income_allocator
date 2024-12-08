@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block style %}
+    
+<style>
+
+
+
+.card-img-top {
+    width: 200px;
+    height: 200px;
+}
+</style>
+{% endblock style %}
+    
+
+{% block body %}
+{% load static %}
+
+{% if user.is_authenticated %}
+  <div class="container">
+  <h1>describe your income outgoings</h1>
+<form method="post" action="distributeI" >
+  <!-- First number input -->
+  <div class="form-group">
+    <label for="number1" class="my-2">Income</label>
+    <input type="number" class="form-control" id="income" name="income" required>
+</div>
+  <div class="form-group">
+      <label for="number1" class="my-2">Entertainment outgoings</label>
+      <input type="number" class="form-control" id="Entertainment" name="Entertainment" required>
+  </div>
+  <!-- Second number input -->
+  <div class="form-group">
+      <label for="number2" class="my-2">Transport outgoings</label>
+      <input type="number" class="form-control" id="Transport" name="Transport" required>
+  </div>
+  <!-- Third number input -->
+  <div class="form-group">
+      <label for="number3" class="my-2">rent outgoings</label>
+      <input type="number" class="form-control" id="rent" name="rent" required>
+  </div>
+  <!-- Fourth number input -->
+  <div class="form-group">
+      <label for="number4" class="my-2">Other outgoings</label>
+      <input type="number" class="form-control" id="Other" name="Other" required>
+  </div>
+  <!-- Submit button -->
+  {% csrf_token %}
+  <button type="submit" class="btn btn-primary my-3">Submit</button>
+</form>
+
+</div>
+{% endif %}
+  
+
+
+<div class="row  my-5  ">
+<div class="card  mx-3" style="width: 18rem;">
+    <img src="{% static 'img/enterlainment2.webp' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Entertainment outgoings</h5>
+      <p class="card-text">IN  how much money you spend on Entertainment</p>
+      <a href="entertainment/" class="btn btn-primary"> see expenses </a>
+    </div>
+  </div>
+
+
+
+  <div class="card  mx-3" style="width: 18rem;">
+    <img src="{% static 'img/transport.webp' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Transport outgoings</h5>
+      <p class="card-text">how much money you spend on transport</p>
+      <a href="transport/" class="btn btn-primary"> see expenses</a>
+    </div>
+  </div>
+
+
+
+  <div class="card  mx-3" style="width: 18rem;">
+    <img src="{% static 'img/rent1.webp' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">rent outgoings</h5>
+      <p class="card-text">this is show your montly expendature</p>
+      <a href="rent/" class="btn btn-primary"> see expenses</a>
+   
+    </div>
+  </div>
+
+
+
+  <div class="card  mx-3" style="width: 18rem;">
+    <img src="{% static 'img/other3.jpg' %}" class="card-img-top" alt="..." id="imgtag">
+    <div class="card-body">
+      <h5 class="card-title">other expanses</h5>
+      <p class="card-text"> it is show other part how much you spend</p>
+      <a href=" other/" class="btn btn-primary"> see expenses</a>
+    </div>
+  </div>
+
+
+
+</div>
+{% endblock body %}

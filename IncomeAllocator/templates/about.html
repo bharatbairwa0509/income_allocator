@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+{% extends 'base.html' %}
+
+{% block title %}Expense Distribution{% endblock %}
+
+{% block content %}
+    <h2>{{ user.username }}'s Expense Distribution</h2>
+    <img src="{% url 'expense_pie_chart_view' %}" alt="Expense Pie Chart">
+{% endblock %}
+
+{% endblock body %}

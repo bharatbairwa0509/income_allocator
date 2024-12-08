@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %}Expense Chart{% endblock %}
+
+{% block body %}
+    <h2>{{ user.username }}'s Expense Chart</h2>
+    <img src="data:image/png;base64,{{ graph }}" alt="Expense Pie Chart">
+{% endblock body %}
